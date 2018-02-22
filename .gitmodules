@@ -1,0 +1,3 @@
+[submodule "Shrink"]
+	path = Shrink
+	url = https://github.com/trvon/Shrink.git
