@@ -1,0 +1,26 @@
+{
+  "name": "Shrink... the link.",
+  "description": "Nobody reads descriptions bruh.",
+  "version": "1.0",
+  "icons": {
+    "128": "128icon.png",
+    "48": "48icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*","http://*/*"],
+      "js": ["jquery-3.2.1.min.js","bg.js"],
+      "run_at": "document_start"
+    }],
+  "permissions": [
+    "activeTab",
+    "https://159.203.191.240/summary/",
+    "tabs"
+  ],
+
+  "browser_action": {
+      "default_title": "For Later",
+      "default_icon": "icon.png"
+  },
+  "manifest_version": 2
+}
