@@ -2,6 +2,19 @@
 //On Document Load Jquery
 $( document ).ready(function() {
 
+//Add Links of Sites that is being summarized as a mistake here!
+var listOfSites = ["https://inbox.google.com/u/0/","https://github.com/","https://stackoverflow.com/questions/","http://www.cplusplus.com/"]
+
+var isIn = false;
+
+    for (var i = 0; i < listOfSites.length; i++) {
+        var theIndex = location.href.indexOf(listOfSites[i]);
+        if(theIndex !== -1) {
+          isIn = true;
+        }
+    }
+
+if(!isIn) {
 //Ajax Get Request
 $.ajax
 ({
@@ -26,11 +39,7 @@ $.ajax
           str += JSON.parse(html).summary[i] + " ";
       }
 
-      var divs = document.getElementsByTagName("div");
-        for(var i = 0; i < divs.length; i++){
-           //do something to each div like
-           divs[i].style.cssText = "z-index: 9";
-        }
+
       //Create variable for Article title
       var title = JSON.parse(html).title;
 
@@ -66,7 +75,7 @@ $.ajax
       overlay.innerHTML += result;
 
       //Style overlay
-      overlay.style.cssText = "position: fixed; color: white !important; background: rgba(194,83,83,.93); z-index:9999 !important; width: 100vw; height: 100vh; padding: 24vh 20% 13%; top: 0; left: 0; box-sizing: border-box; font-size: 18px !important; overflow: scroll; display: block; text-align: left;";
+      overlay.style.cssText = "position: fixed; color: white !important; background: rgba(194,83,83,.93); z-index:9999999999 !important; width: 100vw; height: 100vh; padding: 24vh 20% 13%; top: 0; left: 0; box-sizing: border-box; font-size: 18px !important; overflow: scroll; display: block; text-align: left;";
 
       //Render overlay
       document.body.appendChild(overlay);
@@ -100,6 +109,6 @@ $.ajax
 
 
 
-
+}
 
 });
