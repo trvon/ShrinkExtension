@@ -9,7 +9,7 @@
   "content_scripts": [
     {
       "matches": ["https://*/*","http://*/*"],
-      "js": ["jquery-3.2.1.min.js","js/bg.js"],
+      "js": ["js/jquery-3.2.1.min.js","js/bg.js"],
       "run_at": "document_start"
     }],
   "permissions": [
