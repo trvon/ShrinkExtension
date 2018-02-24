@@ -3,7 +3,7 @@
 $( document ).ready(function() {
 
 //Add Links of Sites that is being summarized as a mistake here!
-var listOfSites = ["https://inbox.google.com/u/0/","https://github.com/","https://stackoverflow.com/questions/","http://www.cplusplus.com/"]
+var listOfSites = ["https://inbox.google.com/u/0/","https://github.com/","https://stackoverflow.com/questions/","http://www.cplusplus.com/","https://www.npmjs.com/", "https://devcenter.heroku.com/","https://secure.coastal24.com/","https://drive.google.com/drive/u/0/my-drive"]
 
 var isIn = false;
 
