@@ -12,6 +12,8 @@ $( document ).ready(function() {
 var listOfSites = ["https://inbox.google.com/u/0/","https://github.com/","https://stackoverflow.com/questions/","http://www.cplusplus.com/","https://www.npmjs.com/", "https://devcenter.heroku.com/","https://secure.coastal24.com/","https://drive.google.com/drive/u/0/my-drive"]
 
 var isIn = false;
+    
+  if(obj.whitelist !== null && obj.whitelist !== undefined) {
 
     for (var i = 0; i < obj.whitelist.length; i++) {
         var theIndex = location.href.indexOf(obj.whitelist[i]);
@@ -19,6 +21,7 @@ var isIn = false;
           isIn = true;
         }
     }
+  }
 
 if(!isIn) {
 //Ajax Get Request
