@@ -33,7 +33,18 @@ $( document ).ready(function() {
             chrome.storage.sync.set({"whitelist": arr})
             document.getElementById("white").textContent="Remove from Whitelist";
           } else {
-            alert("Already Whitelisted")
+            
+            var arr = obj.whitelist;
+            var index = arr.indexOf(url);    // <-- Not supported in <IE9
+
+            if (index !== -1) {
+                arr.splice(index, 1);
+            }
+
+            chrome.storage.sync.set({"whitelist": arr})
+
+            document.getElementById("white").textContent="Add to Whitelist";
+            
           }
             
           }
