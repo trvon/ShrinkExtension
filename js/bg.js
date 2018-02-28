@@ -2,13 +2,19 @@
 //On Document Load Jquery
 $( document ).ready(function() {
 
+  chrome.storage.sync.get("whitelist", function (obj) {
+
+
+
+
+
 //Add Links of Sites that is being summarized as a mistake here!
 var listOfSites = ["https://inbox.google.com/u/0/","https://github.com/","https://stackoverflow.com/questions/","http://www.cplusplus.com/","https://www.npmjs.com/", "https://devcenter.heroku.com/","https://secure.coastal24.com/","https://drive.google.com/drive/u/0/my-drive"]
 
 var isIn = false;
 
-    for (var i = 0; i < listOfSites.length; i++) {
-        var theIndex = location.href.indexOf(listOfSites[i]);
+    for (var i = 0; i < obj.whitelist.length; i++) {
+        var theIndex = location.href.indexOf(obj.whitelist[i]);
         if(theIndex !== -1) {
           isIn = true;
         }
@@ -110,5 +116,6 @@ $.ajax
 
 
 }
+  });
 
 });
