@@ -15,12 +15,14 @@
   "permissions": [
     "activeTab",
     "https://shrinknation/summary/",
-    "tabs"
+    "tabs",
+    "storage"
   ],
 
   "browser_action": {
-      "default_title": "For Later",
-      "default_icon": "res/icon.png"
+      "default_title": "Shrink",
+      "default_icon": "res/icon.png",
+      "default_popup": "popup.html"
   },
   "manifest_version": 2
 }
