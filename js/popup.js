@@ -14,6 +14,10 @@ $( document ).ready(function() {
     }
 
   document.getElementById("white").addEventListener("click", function(){
+    
+    if(obj.whitelist == null || obj.whitelist == undefined) {
+            chrome.storage.sync.set({"whitelist": [url]})
+          } else {
 
           if(obj.whitelist.length < 1) {
             chrome.storage.sync.set({"whitelist": [url]})
@@ -29,6 +33,8 @@ $( document ).ready(function() {
             chrome.storage.sync.set({"whitelist": arr})
           } else {
             alert("Already Whitelisted")
+          }
+            
           }
 
 
