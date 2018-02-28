@@ -31,6 +31,7 @@ $( document ).ready(function() {
             console.log($.inArray(url, arr) > -1)
 
             chrome.storage.sync.set({"whitelist": arr})
+            document.getElementById("white").textContent="Remove from Whitelist";
           } else {
             alert("Already Whitelisted")
           }
